@@ -1,0 +1,19 @@
+<p>Hi This is a page to test the heroku addon</p>
+
+
+<p>Here are the todos fetched from the addon</p>
+
+
+<%= form_tag new_todo_path, method: "POST" %>
+<%= text_field_tag :text, "", placeholder: "enter todo text here" %>
+<%= submit_tag :create_new, %>
+
+<br />
+
+<%- @todos.each do |todo| %>
+<p>
+<%= "#{todo['id']} - #{todo['text']}" %>
+<%= link_to "delete", delete_todo_path(id: todo['id']), method: :delete, confirm: "are you sure?" %>
+<%= link_to "edit", edit_todo_path(id: todo['id']) %>
+</p>
+<%- end %>

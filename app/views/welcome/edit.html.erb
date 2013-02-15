@@ -1,0 +1,6 @@
+<%= form_tag update_todo_path, method: "POST" %>
+<%= hidden_field_tag :_method, "put" %>
+<%= text_field_tag :text, @todo['text'] %>
+<%= submit_tag :update, %>
+
+<%=link_to "Back to Main", root_path %>
