@@ -6,7 +6,9 @@ AddonTest::Application.routes.draw do
   delete 'todos/:id', to: "welcome#destroy", as: :delete_todo
   get 'todos/:id/edit', to: "welcome#edit", as: :edit_todo
   put 'todos/:id/', to: "welcome#update", as: :update_todo
+  get 'noaddon', to: "welcome#no_addon", as: :no_addon
   # first created -> highest priority.
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
