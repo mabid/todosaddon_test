@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-  before_filter :has_addon
+  before_filter :has_addon, except: :no_addon
 
   def index
     @todos = addon_api.index
